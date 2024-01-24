@@ -1,0 +1,63 @@
+html{
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.header-tab-3{
+    background-image: linear-gradient(to right,#BCA4A3,#C0A7A4);
+    
+}
+
+.form-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    margin: 0;
+} 
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    margin: 0;
+}
+
+.btn-tonote{
+    width: 20%;
+    height: 10%;
+    background-color: #827A8A;
+    font-family: 'source-han-sans-japanese', sans-serif;
+    color: #FFFFFF;
+    font-size: 18px;
+    border: 0;
+    border-radius: 3px;
+    float: right;
+}
+.btn-submit{
+    width: 20%;
+    height: 10%;
+    background-color: #FFFFFF;
+    font-family: 'source-han-sans-japanese', sans-serif;
+    font-size: 18px;
+    border: 0;
+    border-radius: 3px;
+    float: left;
+}
+label{
+    margin: 40px 0 40px 0;
+}
+#id_note_title{
+    height: 30px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+}
