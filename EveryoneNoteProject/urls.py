@@ -7,5 +7,5 @@ urlpatterns = [
     path('mnvoice/', include('mnvoice.urls')),
     path('note/', include('note.urls')),
     path('upload/', include('upload.urls')),
-    # path('userlogapp/', include('userlogapp.urls')),
+    path('userlogapp/', include('userlogapp.urls')),
 ]
