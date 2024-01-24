@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+
+app_name = 'note_app'
 urlpatterns = [
-    path('', views.note_base, name="note_base")
+    path('<str:lecture_name>/', views.note_base, name="note_base")
 ]

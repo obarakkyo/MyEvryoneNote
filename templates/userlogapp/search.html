@@ -2,9 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Searchページ</title>
+        <title>検索ページ</title>
     </head>
     <body>
         This is Search!
+        <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
+            {% csrf_token%}
+            <input type="search" placeholder="検索" name="search_word">
+            <button type="submit" id="button" title="button">
     </body>
 </html>
