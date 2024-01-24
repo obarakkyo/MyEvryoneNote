@@ -1,4 +1,28 @@
-This is Note!!
-{{ lecture_name }}
-
-<a href="{% url 'upload_app:upload_base' lecture_name %}"><p>アップロード画面へ</p></a>
+{% load static %}
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ノートページ</title>
+        <link rel="stylesheet" href="{% static "css/note.css" %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+    </head>
+    <body>
+    {{ lecture_name }}
+    <a href="{% url 'upload_app:upload_base' lecture_name 'origin' %}"><p>アップロード画面へ</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '1st' %}"><p>１回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '2st' %}"><p>２回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '3st' %}"><p>３回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '4st' %}"><p>４回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '5st' %}"><p>５回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '6st' %}"><p>６回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '7st' %}"><p>７回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '8st' %}"><p>８回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '9st' %}"><p>９回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '10st' %}"><p>１０回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '11st' %}"><p>１１回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '12st' %}"><p>１２回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '13st' %}"><p>１３回目講義　アップロード</p></a>
+    <a href="{% url 'upload_app:upload_base' lecture_name '14st' %}"><p>１４回目講義　アップロード</p></a>
+    </body>
+</html>

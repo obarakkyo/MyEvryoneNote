@@ -22,10 +22,10 @@ lecture_choices = [
 class UploadForm(forms.ModelForm):
     note_title = forms.CharField(label='ノートタイトル')
     file       = forms.FileField(label='ノートをアップロード')
-    lecture_choice = forms.ChoiceField(label='第〇回目講義', choices=lecture_choices)
+    # lecture_choice = forms.ChoiceField(label='第〇回目講義', choices=lecture_choices)
     # lecture_model  = forms.ModelChoiceField(label='講義名')
 
     class Meta:
         model = UploadModel
-        fields = ["note_title", "file", "lecture_choice", "lecture_model"]
+        fields = ["note_title", "file"]
     

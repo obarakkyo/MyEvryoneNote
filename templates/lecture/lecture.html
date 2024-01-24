@@ -1,8 +1,19 @@
-This is lecture!<br>
-{% if lecture_names %}
-    {% for lecture_name in lecture_names %}
-        <a href="{% url "note_app:note_base" lecture_name.name%}">{{ lecture_name.name}}<br></a>
-    {% endfor %}
-{% else %}
-    ないよー！
-{% endif %}
+{% load static %}
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>講義一覧ページ</title>
+        <link rel="stylesheet" href="{% static "css/lecture.css" %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+    </head>
+    <body>
+    {% if lecture_names %}
+        {% for lecture_name in lecture_names %}
+            <a href="{% url "note_app:note_base" lecture_name.name%}">{{ lecture_name.name}}<br></a>
+        {% endfor %}
+    {% else %}
+        ないよー！
+    {% endif %}
+    </body>
+</html>
