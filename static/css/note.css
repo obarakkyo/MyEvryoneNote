@@ -7,3 +7,8 @@
     left : 50%;         /*画面の中央より右に配置*/
     transform : translateX(50%);    /*要素の幅の半分だけ左にずらして中央揃え*/
 }
+
+.uploadurls{
+    position: absolute;
+    left : 35%;
+}
