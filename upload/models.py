@@ -6,6 +6,9 @@ from lecture.models import LectureModel
 def SavePath(instance, filename):
     return f'{instance.lecture_model}/{instance.lecture_choice}/{filename}'
 
+def SavePathImage(instance, image_file):
+    return f'images/{instance.lecture_model}/{instance.lecture_choice}/{image_file}'
+
 lecture_choices = [
     ("1st" , "1回目"),
     ("2st" , "2回目"),
@@ -27,6 +30,7 @@ class UploadModel(models.Model):
     note_title = models.CharField(max_length=255)
     create_user = models.CharField(max_length=128, default="名無しさん")
     file = models.FileField(upload_to=SavePath)
+    image_file = models.ImageField(upload_to=SavePathImage)
     create_time = models.DateTimeField(default=timezone.now)
     lecture_choice = models.CharField(max_length=200, choices=lecture_choices, default="1st")
     lecture_model = models.ForeignKey(LectureModel, on_delete=models.CASCADE)
