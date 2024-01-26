@@ -8,21 +8,26 @@
         <script src="{% static "js/jquery.min.js" %}"></script>
     </head>
     <body>
-    {{ lecture_name }}
-    <a href="{% url 'upload_app:upload_base' lecture_name 'origin' %}"><p>アップロード画面へ</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '1st' %}"><p>１回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '2st' %}"><p>２回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '3st' %}"><p>３回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '4st' %}"><p>４回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '5st' %}"><p>５回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '6st' %}"><p>６回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '7st' %}"><p>７回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '8st' %}"><p>８回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '9st' %}"><p>９回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '10st' %}"><p>１０回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '11st' %}"><p>１１回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '12st' %}"><p>１２回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '13st' %}"><p>１３回目講義　アップロード</p></a>
-    <a href="{% url 'upload_app:upload_base' lecture_name '14st' %}"><p>１４回目講義　アップロード</p></a>
+    <h1>{{ lecture_name }}</h1>
+    {% if models%}
+    <p>{{models.0.title1}}<a href="{% url 'upload_app:upload_base' lecture_name '1st' %}">１回目講義　アップロード</a></p>
+    <p>{{models.0.title2}}<a href="{% url 'upload_app:upload_base' lecture_name '2st' %}">２回目講義　アップロード</a></p>
+    <p>{{models.0.title3}}<a href="{% url 'upload_app:upload_base' lecture_name '3st' %}">３回目講義　アップロード</a></p>
+    <p>{{models.0.title4}}<a href="{% url 'upload_app:upload_base' lecture_name '4st' %}">４回目講義　アップロード</a></p>
+    <p>{{models.0.title5}}<a href="{% url 'upload_app:upload_base' lecture_name '5st' %}">５回目講義　アップロード</a></p>
+    <p>{{models.0.title6}}<a href="{% url 'upload_app:upload_base' lecture_name '6st' %}">６回目講義　アップロード</a></p>
+    <p>{{models.0.title7}}<a href="{% url 'upload_app:upload_base' lecture_name '7st' %}">７回目講義　アップロード</a></p>
+    <p>{{models.0.title8}}<a href="{% url 'upload_app:upload_base' lecture_name '8st' %}">８回目講義　アップロード</a></p>
+    <p>{{models.0.title9}}<a href="{% url 'upload_app:upload_base' lecture_name '9st' %}">９回目講義　アップロード</a></p>
+    <p>{{models.0.title10}}<a href="{% url 'upload_app:upload_base' lecture_name '10st' %}">１０回目講義　アップロード</a></p>
+    <p>{{models.0.title11}}<a href="{% url 'upload_app:upload_base' lecture_name '11st' %}">１１回目講義　アップロード</a></p>
+    <p>{{models.0.title12}}<a href="{% url 'upload_app:upload_base' lecture_name '12st' %}">１２回目講義　アップロード</a></p>
+    <p>{{models.0.title13}}<a href="{% url 'upload_app:upload_base' lecture_name '13st' %}">１３回目講義　アップロード</a></p>
+    <p>{{models.0.title14}}<a href="{% url 'upload_app:upload_base' lecture_name '14st' %}">１４回目講義　アップロード</a></p>
+    {% endif %}
+
+    <div class="notes">
+        <p>ここにノートを置くよ。</p>
+    </div>
     </body>
 </html>

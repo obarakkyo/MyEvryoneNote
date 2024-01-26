@@ -1,0 +1,9 @@
+.notes{
+    /* margin-left: 50%; 画面の中央より右に配置するためのマージン設定 */
+    /* transform: translateX(-50%); 要素の幅の半分だけ左にずらして中央揃えにする */
+    /* HTML要素のクラスが例として "right-top" とする */
+    position: absolute; /*要素の絶対配置*/
+    top : 0;            /*画面上端*/
+    left : 50%;         /*画面の中央より右に配置*/
+    transform : translateX(50%);    /*要素の幅の半分だけ左にずらして中央揃え*/
+}
