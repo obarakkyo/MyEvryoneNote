@@ -8,6 +8,7 @@
         <script src="{% static "js/jquery.min.js" %}"></script>
     </head>
     <body>
+    <div class="lecture_list">
     {% if lecture_names %}
         {% for lecture_name in lecture_names %}
             <a href="{% url "note_app:note_base" lecture_name.name%}">{{ lecture_name.name}}<br></a>
@@ -15,5 +16,6 @@
     {% else %}
         ないよー！
     {% endif %}
+    </div>
     </body>
 </html>

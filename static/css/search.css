@@ -10,3 +10,11 @@
   height: 50px; /* 高さを指定 */
   font-weight: bold;
 }
+
+.error{
+  display: flex;
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center; /* 縦方向の中央揃え */
+  color : red;
+  font-weight: bold;
+}
