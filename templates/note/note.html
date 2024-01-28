@@ -9,6 +9,8 @@
     </head>
     <body>
     <h1>{{ lecture_name }}</h1>
+    <a href="{% url 'userlogapp:search'%}">検索ページに戻るよ～ん！</a>
+    
     {% if models%}
     <div><a href="{% url 'note_app:note_base' lecture_name '1st'%}">{{models.0.title1}}</a><a href="{% url 'upload_app:upload_base' lecture_name '1st' %}" class="uploadurls">１回目講義　アップロード</a></div>
     <div><a href="{% url 'note_app:note_base' lecture_name '2st'%}">{{models.0.title2}}</a><a href="{% url 'upload_app:upload_base' lecture_name '2st' %}" class="uploadurls">２回目講義　アップロード</a></div>
@@ -30,7 +32,7 @@
         <p>ここにノートを置くよ。</p>
         {% if note_models%}
             {% for note in note_models %}
-                <a href="{{ note.file.url}}">{{note.note_title}}</a><br>
+                <a href="{{ note.file.url}}">{{note.note_title}} : {{note.create_user}}</a><br>
                 <img src="{{ note.image_file.url}}"><br>
             {% endfor %}
         {% endif %}
