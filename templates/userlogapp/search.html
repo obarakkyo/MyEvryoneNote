@@ -8,12 +8,17 @@
         <script src="{% static "js/jquery.min.js" %}"></script>
     </head>
     <body>
-        <div class="container">
-             {% if messages %}
+        <div class="myheader">
+            <h1>岩手大学　講義ノート投稿サイト</h1>
+            <p>講義名を検索</p>
+            {% if messages %}
                 {% for message in messages %}
                     <div class="error">{{ message }}</div>
                 {% endfor %}
             {% endif %}
+        </div>
+
+        <div class="container">
             <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
             {% csrf_token%}
                 <input type="search" placeholder="検索" name="search_word" id="search_word">

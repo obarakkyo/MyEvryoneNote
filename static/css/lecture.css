@@ -5,3 +5,18 @@
     height: 100vh; /* ビューポートの高さいっぱいに広がるように設定 */
     font-size: 25px;
 }
+
+body{
+    background-color:  #a5a9e2;
+  }
+
+a{
+    background-color: #a5a9e2;
+    font-weight: bold;
+    color : black;
+}
+
+a:hover {
+    text-decoration: underline; /* ホバー時にアンダーラインを表示 */
+    color: #555; /* ホバー時のリンクの色を指定 */
+}

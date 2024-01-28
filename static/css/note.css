@@ -32,3 +32,9 @@ a:hover {
 /* body{
     background: linear-gradient(to right,#EE82EE,#EEE3DE);
 } */
+
+.lecture_lists{
+    width: 50%;
+    height: 100vh;
+    float: left;
+}

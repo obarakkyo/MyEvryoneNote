@@ -12,9 +12,17 @@
 }
 
 .error{
-  display: flex;
-  justify-content: center; /* 横方向の中央揃え */
-  align-items: center; /* 縦方向の中央揃え */
   color : red;
   font-weight: bold;
+}
+
+body{
+  /* background-color:  #393B56; */
+  background-color:  #a5a9e2;
+}
+
+.myheader{
+  position: relative;
+  top: 200px;
+  text-align: center;
 }
