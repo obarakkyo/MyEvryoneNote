@@ -20,7 +20,7 @@ def upload_base(request, lecture_name, lecture_number):
             lecture_instance = LectureModel.objects.get(name=lecture_name)
             forms.instance.lecture_model  = lecture_instance
             forms.save()
-        return redirect('note_app:note_base', lecture_name, lecture_number)
+        return redirect('note_app:note_base', lecture_name, lecture_number, 1)
     
     lecture_number = lecture_number.replace('st', '回目')
     return render(request, 'upload/upload.html', context={'forms':forms, 'lecture_name':lecture_name, 'lecture_number':lecture_number})

@@ -11,7 +11,7 @@
     <div class="lecture_list">
     {% if lecture_names %}
         {% for lecture_name in lecture_names %}
-            <a href="{% url "note_app:note_base" lecture_name.name '1st'%}">{{ lecture_name.name}}<br></a>
+            <a href="{% url "note_app:note_base" lecture_name.name '1st' 1%}">{{ lecture_name.name}}<br></a>
         {% endfor %}
     {% else %}
         ないよー！
