@@ -22,5 +22,6 @@ def upload_base(request, lecture_name, lecture_number):
             forms.save()
         return redirect('note_app:note_base', lecture_name, lecture_number, 1)
     
+    lecture_number_notchanged = lecture_number
     lecture_number = lecture_number.replace('st', '回目')
-    return render(request, 'upload/upload.html', context={'forms':forms, 'lecture_name':lecture_name, 'lecture_number':lecture_number})
+    return render(request, 'upload/upload.html', context={'forms':forms, 'lecture_name':lecture_name, 'lecture_number':lecture_number, 'lecture_number_notchanged':lecture_number_notchanged})

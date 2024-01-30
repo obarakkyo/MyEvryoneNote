@@ -62,3 +62,19 @@ body{
     bottom: 10;
 }
 
+h1{
+    width: 50%;
+}
+
+.logout-button{
+    position: absolute;
+    top: 10px; /* 上端からの距離 */
+    right: 10px; /* 右端からの距離 */
+    padding: 10px;
+    background-color: #1f0d0d;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+

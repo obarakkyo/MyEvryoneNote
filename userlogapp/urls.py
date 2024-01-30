@@ -5,5 +5,6 @@ app_name = "userlogapp"
 urlpatterns = [
     path('', views.userlogapp_base, name="login"),
     path('search/', views.SearchFunction, name="search"),
-    path('signup/', views.signupfunc, name="signup")
+    path('signup/', views.signupfunc, name="signup"),
+    path('logout/', views.logoutfunc, name="logout"),
 ]

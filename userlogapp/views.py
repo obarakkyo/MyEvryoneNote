@@ -41,3 +41,8 @@ def signupfunc(request):
             messages.error(request, 'そのusernameは既に存在しています。')
             return render(request, 'userlogapp/signup.html', {'errormassage':'そのusernameは既に存在しています。'})
     return render(request, 'userlogapp/signup.html', {})
+
+def logoutfunc(request):
+    print(request.user.username, 'をログアウトします')
+    logout(request)
+    return redirect('userlogapp:login')

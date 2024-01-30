@@ -9,6 +9,9 @@
     </head>
     <body>
     <h1>{{ lecture_name }}{{lecture_number}}</h1>
+    <form method="GET" action="{% url 'userlogapp:logout'%}">
+        <button type="submit" class="logout-button">ログアウト</button>
+    </form>
     
     <div class="lecture_lists">
         <a href="{% url 'userlogapp:search'%}">検索ページに戻るよ～ん！</a>

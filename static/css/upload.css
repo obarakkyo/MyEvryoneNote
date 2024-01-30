@@ -12,7 +12,7 @@ body{
 
 .header-tab-3{
     background-image: linear-gradient(to right,#BCA4A3,#C0A7A4);
-    
+    text-align: center;
 }
 
 .form-main{
@@ -60,4 +60,8 @@ label{
     width: 60%;
     border: none;
     border-radius: 5px;
+}
+
+a{
+    text-align: center;
 }
