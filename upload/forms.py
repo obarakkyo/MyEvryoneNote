@@ -19,10 +19,22 @@ lecture_choices = [
     ("14st" , "14回目"),
 ]
 
+class CustomFileInput(forms.ClearableFileInput):
+    def __init__(self, attrs=None, accept=None):
+        super().__init__(attrs)
+        if accept:
+            self.attrs['accept'] = accept
+
+class CustomImageInput(forms.ClearableFileInput):
+    def __init__(self, attrs=None, accept=None):
+        super().__init__(attrs)
+        if accept:
+            self.attrs['accept'] = accept
+
 class UploadForm(forms.ModelForm):
     note_title = forms.CharField(label='ノートタイトル')
-    file       = forms.FileField(label='ノートをアップロード')
-    image_file = forms.ImageField(label='ノート表紙をアップロード')
+    file       = forms.FileField(label='ノートをアップロード', widget=CustomFileInput(accept=".pdf"))
+    image_file = forms.ImageField(label='ノート表紙をアップロード', widget=CustomImageInput(accept=".png, .jpg"))
     # lecture_choice = forms.ChoiceField(label='第〇回目講義', choices=lecture_choices)
     # lecture_model  = forms.ModelChoiceField(label='講義名')
 
