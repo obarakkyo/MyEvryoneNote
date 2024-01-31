@@ -1,7 +1,8 @@
 html,
 body {
   height: 100%;
-  background-color:  #393B56;
+  /* background-color:  hwb(236 41% 25%); */
+  background:linear-gradient(90deg, #393B56, hwb(236 41% 25%));
 }
 
 .form-signin {

@@ -7,11 +7,11 @@
 }
 
 body{
-    background-color:  #a5a9e2;
+    background:linear-gradient(90deg, #393B56, hwb(236 41% 25%));
   }
 
 a{
-    background-color: #a5a9e2;
+    /* background-color: #a5a9e2; */
     font-weight: bold;
     color : black;
 }

@@ -18,7 +18,7 @@
 
 body{
   /* background-color:  #393B56; */
-  background-color:  #a5a9e2;
+  background:linear-gradient(90deg, #393B56, hwb(236 41% 25%));
 }
 
 .myheader{
