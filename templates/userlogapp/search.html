@@ -3,27 +3,54 @@
 <html>
     <head>
         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>検索ページ</title>
         <link rel="stylesheet" href="{% static "css/search.css" %}">
         <script src="{% static "js/jquery.min.js" %}"></script>
     </head>
     <body>
-        <div class="myheader">
-            <h1>岩手大学　講義ノート投稿サイト</h1>
-            <p>講義名を検索</p>
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="error">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
+    <div class="search-content">
+        <div class="upper">
+                <div class="search-logo">
+                    <div class="logo-left">
+                        <img src="{% static "image/logoleft.png"%}"  id="logoleft" class="fade-in-left">
+                    </div>
+                    <div class="logo-right">
+                        <img src="{% static  "image/logoright.png"%}" id="logoright" class="fade-in-right">
+                    </div>
+                </div>
+                <div class="text-container">
+                    <div class="search-p fade-in-left">
+                        <p class="index-para">岩手大学生をONE TEAMに</p>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="error">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
         </div>
 
-        <div class="container">
-            <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
-            {% csrf_token%}
-                <input type="search" placeholder="検索" name="search_word" id="search_word">
-                <input type="submit" id="button" title="button" value="検索">
-            </form>
+        <div class="lower">
+            <div class="searchbar">
+                <div class="searchbar-border">
+                    <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
+                    {% csrf_token%}
+                        <input type="search" placeholder="検索" name="search_word" id="search_word" class="searchbar-input">
+                        <div class="searchbar-button-border">
+                            <input type="submit" id="button" title="button" value="" class="searchbar-button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="search-footer">
+                <div class="footer-container fade-in-rooter">
+                    <p class="rooter-p" id="rooter-p-spci">お問い合わせ</p>
+                    <p class="rooter-p">よくある質問</p>
+                    <p class="rooter-p">メールアドレス：support@minnano-nooto</p>
+                </div>
+            </div>
         </div>
+    </div>
     </body>
 </html>
