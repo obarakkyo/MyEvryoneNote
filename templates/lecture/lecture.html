@@ -8,14 +8,26 @@
         <script src="{% static "js/jquery.min.js" %}"></script>
     </head>
     <body>
+    <div class="header">
+        <p>みんなのノート</p>
+        <p>Every One's Note</p>
+
+        <div class="searchbar">
+            <input type="search" placeholder="検索" name="search_word" id="search_word">
+            <button id="search-button">検索</button>
+        </div>
+
+        <div class="lecture-tab">講義</div>
+        <div class="note-tab">ノート</div>
+        <div class="mnnvoice-tab">みんなの声</div>
+        <div class="logout">ログアウト</div>
+    </div>
     <div class="lecture_list">
-    {% if lecture_names %}
-        {% for lecture_name in lecture_names %}
-            <a href="{% url "note_app:note_base" lecture_name.name '1st' 1%}">{{ lecture_name.name}}<br></a>
-        {% endfor %}
-    {% else %}
-        ないよー！
-    {% endif %}
+        {% if lecture_names %}
+            {% for lecture_name in lecture_names %}
+                <a href="{% url "note_app:note_base" lecture_name.name '1st' 1%}">{{ lecture_name.name}}<br></a>
+            {% endfor %}
+        {% endif %}
     </div>
     </body>
 </html>
