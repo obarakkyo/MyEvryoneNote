@@ -46,3 +46,6 @@ def logoutfunc(request):
     print(request.user.username, 'をログアウトします')
     logout(request)
     return redirect('userlogapp:login')
+
+def base_func(request):
+    return render(request, 'base.html', context={})

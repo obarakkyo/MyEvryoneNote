@@ -1,0 +1,68 @@
+img{
+    height: 200px;
+    width: 200px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* ホバー時のスタイルを指定 */
+a:hover {
+    text-decoration: underline; /* ホバー時にアンダーラインを表示 */
+    color: #555; /* ホバー時のリンクの色を指定 */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.notes{
+    /* margin-left: 50%; 画面の中央より右に配置するためのマージン設定 */
+    /* transform: translateX(-50%); 要素の幅の半分だけ左にずらして中央揃えにする */
+    /* HTML要素のクラスが例として "right-top" とする */
+    /* position: absolute; /*要素の絶対配置*/
+    /* top : 0;            画面上端 */
+    /* left : 50%;         画面の中央より右に配置 */
+    /* transform : translateX(50%);    要素の幅の半分だけ左にずらして中央揃え */
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(204, 246, 246);
+    float: right;
+}
+
+.uploadurls{
+    position: absolute;
+    left : 35%;
+}
+
+.lecture_lists{
+    width: 50%;
+    height: 100vh;
+    float: left;
+    background-color: blanchedalmond;
+}
+
+.section {
+    width: 33.33%;
+    height: 42vh; /* 画面の高さいっぱいに広げる */
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid #ccc; /* セクションの境界線を表示（デバッグ用） */
+  }
+
+.pagetrans{
+    text-align: center;
+    position: fixed;
+    width: 50%;
+    float: right;
+    bottom: 10;
+}
+
+
+
+
+
