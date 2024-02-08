@@ -22,7 +22,8 @@
             </form>
         </div>
 
-        <div class="lecture-tab">講義</div>
+        <!-- <div class="lecture-tab">講義</div> -->
+
         <div class="note-tab">ノート</div>
         <div class="mnnvoice-tab">みんなの声</div>
         <div class="logout">
@@ -80,31 +81,23 @@
 
     $(document).ready(function(){
 
-        $(".lecture-tab").click(function(){
-            var search_word = '{{models.0.name}}';
-            console.log(search_word);
-
-            //Ajax通信を行う
-            /*
-            $.ajax({
-                url : "{% url 'lecture_app:lecture_base'%}",
-                type : "POST",
-                data : {search_word:search_word},
-                success: function(response){
-                    console.log("Success: " + response);
-                    $("html").html(response);                   
-                },
-                error: function(xhr, status, error){
-                    console.error("Error: " + status + " " + error);
-                }
-            })
-            */
-        })
-
         $(".project_title").click(function(){
             console.log("検索画面に戻ります。");
 
-            window.location.href = "{% url 'userlogapp:search'%}"
+            window.location.href = "{% url 'userlogapp:search'%}";
+        })
+
+        $(".mnnvoice-tab").click(function(){
+            console.log("みんなの声ページに遷移！");
+            var lecture_name = "{{models.0.name}}";
+            console.log(lecture_name)
+            window.location.href = "{% url 'mnvoice_app:mnvoice_base' lecture_name %}";
+        })
+
+        $(".lecture-tab").click(function(){
+            console.log('講義画面に戻ります。');
+
+
         })
 
     })

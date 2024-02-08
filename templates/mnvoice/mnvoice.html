@@ -1,1 +1,94 @@
-This is mnvoice!
+{% load static%}
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>みんなの声</title>
+        <link rel="stylesheet" href="{% static "css/mnvoice.css" %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+
+    </head>
+
+    <body>
+
+    <div class="header">
+        <div class="project_title">
+            <p>みんなのノート</p>
+            <p>Every One's Note</p>
+        </div>
+
+        <div class="searchbar">
+            <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
+                {% csrf_token%}
+                <input type="search" placeholder="検索" name="search_word" id="search_word">
+                <button type="submit" id="search-button">検索</button>
+            </form>
+        </div>
+
+        <!--
+
+        <div class="lecture-tab">講義</div>
+        <div class="note-tab">ノート</div>
+
+        -->
+
+        <div class="mnnvoice-tab">みんなの声</div>
+        <div class="logout">
+            <form method="GET" action="{% url 'userlogapp:logout'%}">
+                <button type="submit" class="logout-button">ログアウト</button>
+            </form>
+        </div>
+    </div>
+
+     <div class="contents">
+
+        <div class="left-area">
+            <h1 class="lecture-title">{{lecture_name}}の口コミ</h1>
+
+            <a class="backnote" href="{% url  'note_app:note_base' lecture_name '1st' 1%}">ノート画面に戻る</a>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header">
+                みんなの声/Oneline
+            </div>
+
+            <div class="chat-display">
+                <p>Hello World!</p>
+            </div>
+
+            <div class="chat-comment-area">
+                <form method="POST">{% csrf_token%}
+                    <textarea id="chat-main" placeholder="コメント" name="chat_document"></textarea>
+                    <input type="submit" id="chat-button"></input>
+                </form>
+            </div>
+        </div>
+     </div>
+
+     <script>
+
+        $(document).ready(function(){
+
+            $(".project_title").click(function(){
+                console.log("検索画面に戻ります。");
+
+                window.location.href = "{% url 'userlogapp:search'%}"
+            })
+
+            $(".note-tab").click(function(){
+                console.log('note-tab clicked!');
+                var lecture_name = "{{lecture_name}}";
+                var lecture_number = '1st';
+                var page_number = 1;
+                console.log(lecture_name, lecture_number, page_number);
+
+                window.location.href = "/note/" + lecture_name + "/" + lecture_number + "/" + page_number;
+
+            })
+
+        })
+
+     </script>
+    </body>
+</html>
