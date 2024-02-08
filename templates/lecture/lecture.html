@@ -9,25 +9,145 @@
     </head>
     <body>
     <div class="header">
-        <p>みんなのノート</p>
-        <p>Every One's Note</p>
+
+        <div class="project_title">
+            <p>みんなのノート</p>
+            <p>Every One's Note</p>
+        </div>
 
         <div class="searchbar">
-            <input type="search" placeholder="検索" name="search_word" id="search_word">
-            <button id="search-button">検索</button>
+            <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
+                {% csrf_token%}
+                <input type="search" placeholder="検索" name="search_word" id="search_word">
+                <button type="submit" id="search-button">検索</button>
+            </form>
         </div>
 
         <div class="lecture-tab">講義</div>
         <div class="note-tab">ノート</div>
         <div class="mnnvoice-tab">みんなの声</div>
-        <div class="logout">ログアウト</div>
+        
+        <div class="logout">
+            <form method="GET" action="{% url 'userlogapp:logout'%}">
+                <button type="submit" class="logout-button">ログアウト</button>
+            </form>
+        </div>
     </div>
-    <div class="lecture_list">
-        {% if lecture_names %}
-            {% for lecture_name in lecture_names %}
-                <a href="{% url "note_app:note_base" lecture_name.name '1st' 1%}">{{ lecture_name.name}}<br></a>
-            {% endfor %}
-        {% endif %}
+    <div class="contents">
+        <div class="lecture_lists">
+            
+            <p class="lecture_title">講義目　一覧</p>
+            <div class="lecture_row">
+
+                {% if lecture_names %}
+                    {% if lecture_names.0%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.0.name '1st' 1%}">{{ lecture_names.0.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.1%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.1.name '1st' 1%}">{{ lecture_names.1.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.2%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.2.name '1st' 1%}">{{ lecture_names.2.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.3%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.3.name '1st' 1%}">{{ lecture_names.3.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.4%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.4.name '1st' 1%}">{{ lecture_names.4.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.5s%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.5.name '1st' 1%}">{{ lecture_names.5.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.6%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.6.name '1st' 1%}">{{ lecture_names.6.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.7%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.7.name '1st' 1%}">{{ lecture_names.7.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.8%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.8.name '1st' 1%}">{{ lecture_names.8.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.9%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.9.name '1st' 1%}">{{ lecture_names.9.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.10%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.10.name '1st' 1%}">{{ lecture_names.10.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.11%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.11.name '1st' 1%}">{{ lecture_names.11.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.12%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.12.name '1st' 1%}">{{ lecture_names.12.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+                    {% if lecture_names.13%}
+                        <p>・<a href="{% url "note_app:note_base" lecture_names.13.name '1st' 1%}">{{ lecture_names.13.name}}<br></a></p>
+                    {% else %}
+                    <p>・</p>
+                    {% endif %}
+
+
+                {% endif %} 
+
+            </div>
+
+        </div>
+
+        <div class="right_area">
+        </div>
     </div>
+
+        <script>
+
+    $(document).ready(function(){
+
+        $(".project_title").click(function(){
+            console.log("検索画面に戻ります。");
+
+            window.location.href = "{% url 'userlogapp:search'%}"
+        })
+
+    })
+
+
+    </script>
     </body>
 </html>

@@ -44,7 +44,12 @@ a:hover {
     height: 10%;
     left: 60%;
     text-align: center;
+
+    font-size: 200%;
     background-image: linear-gradient(to right,#7F7788,#857C8C);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .note-tab{
@@ -53,7 +58,12 @@ a:hover {
     height: 10%;
     left: 70%;
     text-align: center;
+
+    font-size: 200%;
     background-image: linear-gradient(to right,#BCA4A3,#C0A7A4);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .mnnvoice-tab{
@@ -62,7 +72,12 @@ a:hover {
     height: 10%;
     left: 80%;
     text-align: center;
+
+    font-size: 200%;
     background-image: linear-gradient(to right,#EADDD8,#EEE3DE);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .logout{
@@ -104,6 +119,7 @@ img{
     box-sizing: border-box;
     float: left;
     border: 1px solid #060000; /* セクションの境界線を表示（デバッグ用） */
+    background-color: #d0c2c2;
   }
 
 .section_material{
@@ -135,7 +151,6 @@ img{
     top: 25%;
     background-color: black;
     color: #EEE3DE;
-
 }
 .lecture_lists{
     position: absolute;
@@ -145,9 +160,6 @@ img{
     /* background-color: aqua; */
 }
 
-/* .lecture_p{
-    font-size: 130%;
-} */
 
 .lecture_title{
     width: 100%;
@@ -168,6 +180,13 @@ img{
     border-left: transparent;
     border-right: transparent;
 
+}
+
+.upload_icon{
+    position: relative;
+    left: 70%;
+    width: 5%;
+    height: 80%;
 }
 
 

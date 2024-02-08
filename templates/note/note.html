@@ -9,12 +9,17 @@
     </head>
     <body>
     <div class="header">
-        <p>みんなのノート</p>
-        <p>Every One's Note</p>
+        <div class="project_title">
+            <p>みんなのノート</p>
+            <p>Every One's Note</p>
+        </div>
 
         <div class="searchbar">
-            <input type="search" placeholder="検索" name="search_word" id="search_word">
-            <button id="search-button">検索</button>
+            <form method="POST" action="{% url 'lecture_app:lecture_base'%}">
+                {% csrf_token%}
+                <input type="search" placeholder="検索" name="search_word" id="search_word">
+                <button type="submit" id="search-button">検索</button>
+            </form>
         </div>
 
         <div class="lecture-tab">講義</div>
@@ -31,7 +36,6 @@
         <div class="lecture_lists">
             <!-- <a href="{% url 'userlogapp:search'%}">検索ページに戻るよ～ん！</a> -->
             {% if models%}
-                <div class="lecture_p">
                     <p class="lecture_title">{{models.0.name}}</p>
                     <div class="lecture_row">
                     <p>1.<a href="{% url 'note_app:note_base' lecture_name '1st' 1%}">{{models.0.title1}}</a><a href="{% url 'upload_app:upload_base' lecture_name '1st' %}" class="uploadurls">１回目　アップロード</a></p>
@@ -49,7 +53,6 @@
                     <p>13.<a href="{% url 'note_app:note_base' lecture_name '13st' 1%}">{{models.0.title13}}</a><a href="{% url 'upload_app:upload_base' lecture_name '13st' %}" class="uploadurls">１３回目　アップロード</a></p>
                     <p>14.<a href="{% url 'note_app:note_base' lecture_name '14st' 1%}">{{models.0.title14}}</a><a href="{% url 'upload_app:upload_base' lecture_name '14st' %}" class="uploadurls">１４回目　アップロード</a></p>
                     </div>
-                </div>
             {% endif %}
         </div>
 
@@ -59,7 +62,8 @@
                     <div class="section">
                         <div class="section_material">
                             <img src="{{ note.image_file.url}}"><br>
-                            <a href="{{ note.file.url}}">{{note.note_title}} : {{note.create_user}}</a><br>
+                            <a href="{{ note.file.url}}">「{{note.note_title}}」</a><br>
+                            <p>作成者：{{note.create_user}}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -71,5 +75,41 @@
         </div>
 
     </div>
+
+    <script>
+
+    $(document).ready(function(){
+
+        $(".lecture-tab").click(function(){
+            var search_word = '{{models.0.name}}';
+            console.log(search_word);
+
+            //Ajax通信を行う
+            /*
+            $.ajax({
+                url : "{% url 'lecture_app:lecture_base'%}",
+                type : "POST",
+                data : {search_word:search_word},
+                success: function(response){
+                    console.log("Success: " + response);
+                    $("html").html(response);                   
+                },
+                error: function(xhr, status, error){
+                    console.error("Error: " + status + " " + error);
+                }
+            })
+            */
+        })
+
+        $(".project_title").click(function(){
+            console.log("検索画面に戻ります。");
+
+            window.location.href = "{% url 'userlogapp:search'%}"
+        })
+
+    })
+
+
+    </script>
     </body>
 </html>
