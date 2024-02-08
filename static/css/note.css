@@ -1,8 +1,9 @@
 a{
     font-weight: bold;
     color : black;
-    /* text-decoration: none;
-    position: absolute; */
+    text-decoration: none;
+    
+    /*position: absolute; */
     /* left: 5%; */
 }
 
@@ -81,17 +82,19 @@ img{
 .contents{
     width: 100%;
     height: 90%;
-    background-color: #BCA4A3;
+    background-image: linear-gradient(to right,#BCA4A3,#C0A7A4);
+    /* background-image: linear-gradient(to right,#de8737,#f0d3b7); */
     position: absolute;
 }
+
 
 .notes{
     position: absolute;
     width: 50%;
     height: 100%;
     left: 50%;
-    top: 0%;
-    background-color: #d08a88;
+    top: 1%;
+    /* background-color: #d08a88; */
 }
 
 .section {
@@ -100,8 +103,13 @@ img{
     text-align: center;
     box-sizing: border-box;
     float: left;
-    border: 1px solid #b22020; /* セクションの境界線を表示（デバッグ用） */
+    border: 1px solid #060000; /* セクションの境界線を表示（デバッグ用） */
   }
+
+.section_material{
+    position: relative;
+    top: 5%;
+}
 
 
 .pagetrans{
@@ -116,7 +124,7 @@ img{
 
 .uploadurls{
     position: absolute;
-    left: 38%;
+    left: 75%;
 }
 
 .logout-button{
@@ -127,6 +135,38 @@ img{
     top: 25%;
     background-color: black;
     color: #EEE3DE;
+
+}
+.lecture_lists{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 5%;
+    /* background-color: aqua; */
+}
+
+/* .lecture_p{
+    font-size: 130%;
+} */
+
+.lecture_title{
+    width: 100%;
+
+    text-align: center;
+    font-weight: bold;
+
+    border: 2px solid;
+    border-color: #000000;
+}
+
+.lecture_row p{
+    width: 100%;
+    height: 4%;
+    
+    border: 2px solid;
+    border-color: #BBBBBB;
+    border-left: transparent;
+    border-right: transparent;
 
 }
 
