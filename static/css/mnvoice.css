@@ -156,7 +156,7 @@
     height: 80%;
     top: 10%;
 
-    background-color: #f1c9b8;
+    background-color: #f3f0ee;
 }
 
 .chat-comment-area{
@@ -179,4 +179,18 @@
     width: 5%;
     height: 100%;
     left: 95%;
+}
+
+.user-comments{
+    border-radius: 20px;
+    background-color: rgb(75, 199, 71);
+}
+
+.user{
+    /* border-radius: 20px; */
+    font-weight: bold;
+    background-color: white;
+}
+label{
+    display: none;
 }

@@ -54,13 +54,22 @@
             </div>
 
             <div class="chat-display">
-                <p>Hello World!</p>
+                {% if models%}
+                    {% for model in models %}
+                        <p><span class="user">{{model.user}}</span>:<span class="user-comments">{{model.text}}</span></p>
+                    {% endfor %}
+                {% endif %}
             </div>
 
             <div class="chat-comment-area">
                 <form method="POST">{% csrf_token%}
+                    <!--
                     <textarea id="chat-main" placeholder="コメント" name="chat_document"></textarea>
+                    -->
+                    {% if forms %}
+                    {{ forms }}
                     <input type="submit" id="chat-button"></input>
+                    {% endif %}
                 </form>
             </div>
         </div>
