@@ -25,12 +25,10 @@
             </form>
         </div>
 
-        <!--
-
         <div class="lecture-tab">講義</div>
+
         <div class="note-tab">ノート</div>
 
-        -->
 
         <div class="mnnvoice-tab">みんなの声</div>
         <div class="logout">
@@ -95,6 +93,30 @@
                 window.location.href = "/note/" + lecture_name + "/" + lecture_number + "/" + page_number;
 
             })
+
+            $(".lecture-tab").click(function(){
+            console.log('講義画面に戻ります。');
+            var lecture_name = "{{models.0.name}}";
+            $.ajax({
+                type : "POST",
+                url  : "{% url 'lecture_app:lecture_base'%}",
+                data :{
+                    search_word : lecture_name
+                },
+
+                success : function(response){
+                    console.log('成功！');
+                    console.log(response);
+                    window.location.href = "/lecture/?search_word=" + lecture_name;
+                },
+
+                error: function(xhr, status, error) {
+                // 画面遷移が失敗した場合の処理
+                console.error("画面遷移失敗: " + error);
+                }
+
+            });
+        })
 
         })
 
