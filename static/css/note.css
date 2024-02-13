@@ -97,7 +97,7 @@ img{
 .contents{
     width: 100%;
     height: 90%;
-    background-image: linear-gradient(to right,#BCA4A3,#C0A7A4);
+    background-image: linear-gradient(to right,#cea2a1,#C0A7A4);
     /* background-image: linear-gradient(to right,#de8737,#f0d3b7); */
     position: absolute;
 }
@@ -107,7 +107,7 @@ img{
     position: absolute;
     width: 50%;
     height: 100%;
-    left: 50%;
+    left: 49%;
     top: 1%;
     /* background-color: #d08a88; */
 }
@@ -154,7 +154,7 @@ img{
 }
 .lecture_lists{
     position: absolute;
-    width: 40%;
+    width: 37%;
     height: 100%;
     left: 5%;
     /* background-color: aqua; */

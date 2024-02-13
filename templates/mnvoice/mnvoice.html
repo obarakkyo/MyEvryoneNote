@@ -54,13 +54,17 @@
 
                 <br>
 
-                <p>目的</p>
+                <p class="syllabus-contents">目的</p>
                     <p class="syllabus-text">{{syllabus_model.pusrpose}}</p>
 
-                <p>目標</p>
+                <br>
+
+                <p class="syllabus-contents">目標</p>
                     <p class="syllabus-text">{{syllabus_model.goal}}</p>
 
-                <p>概要</p>
+                <br>
+
+                <p class="syllabus-contents">概要</p>
                     <p class="syllabus-text">{{syllabus_model.overview}}</p>
                 {% endif %}
             </div>
@@ -76,7 +80,7 @@
             <div class="chat-display">
                 {% if models%}
                     {% for model in models %}
-                        <p><span class="user">{{model.user}}</span>:<span class="user-comments">{{model.text}}</span></p>
+                        <p><span class="user">{{model.user}}</span>:<span class="user-comments">{{model.text}}</span><span class="comment-time">{{model.created_at}}</span></p>
                     {% endfor %}
                 {% endif %}
             </div>
