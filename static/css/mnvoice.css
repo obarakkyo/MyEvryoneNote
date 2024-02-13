@@ -101,6 +101,21 @@
     /* background-color: aqua; */
 }
 
+.lecture-syllabus{
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    width: 90%;
+    height: 90%;
+    /* background-color: #857C8C; */
+
+}
+
+.syllabus-text{
+    background-color: white;
+    border-radius: 5px;
+}
+
 .lecture-title{
     position: absolute;
     width: 90%;
@@ -115,16 +130,6 @@
 
 }
 
-.backnote{
-    position: absolute;
-    width: 90%;
-    left: 5%;
-
-    top: 20%;
-
-    text-align: center;
-    font-weight: bold;
-}
 
 .chat-area{
     position: absolute;
@@ -155,6 +160,10 @@
     width: 100%;
     height: 80%;
     top: 10%;
+
+    overflow: auto;
+    border: 1px solid #ccc;
+
 
     background-color: #f3f0ee;
 }
@@ -191,6 +200,7 @@
     font-weight: bold;
     background-color: white;
 }
+
 label{
     display: none;
 }

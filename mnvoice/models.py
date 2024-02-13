@@ -14,3 +14,16 @@ class BoardModel(models.Model):
     
     class Meta:
         ordering = ['-created_at']
+
+
+
+class SyllabusModel(models.Model):
+    professor = models.CharField(max_length=255)
+    Opening_hours = models.CharField(max_length=255)
+    pusrpose = models.TextField()
+    goal = models.TextField()
+    overview = models.TextField()
+    lecture = models.ForeignKey(LectureModel, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.lecture}"

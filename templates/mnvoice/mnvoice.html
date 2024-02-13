@@ -43,7 +43,29 @@
         <div class="left-area">
             <h1 class="lecture-title">{{lecture_name}}の口コミ</h1>
 
+            <!--
             <a class="backnote" href="{% url  'note_app:note_base' lecture_name '1st' 1%}">ノート画面に戻る</a>
+            -->
+            <div class="lecture-syllabus">
+                {% if syllabus_model %}
+                <p>教授:{{syllabus_model.professor}}</p>
+
+                <p>開講時間:{{syllabus_model.Opening_hours}}</p>
+
+                <br>
+
+                <p>目的</p>
+                    <p class="syllabus-text">{{syllabus_model.pusrpose}}</p>
+
+                <p>目標</p>
+                    <p class="syllabus-text">{{syllabus_model.goal}}</p>
+
+                <p>概要</p>
+                    <p class="syllabus-text">{{syllabus_model.overview}}</p>
+                {% endif %}
+            </div>
+
+            
         </div>
 
         <div class="chat-area">
@@ -96,7 +118,7 @@
 
             $(".lecture-tab").click(function(){
             console.log('講義画面に戻ります。');
-            var lecture_name = "{{models.0.name}}";
+            var lecture_name = "{{lecture_name}}";
             $.ajax({
                 type : "POST",
                 url  : "{% url 'lecture_app:lecture_base'%}",

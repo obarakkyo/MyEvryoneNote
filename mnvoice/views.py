@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import BoardModel
+from .models import BoardModel, SyllabusModel
 from lecture.models import LectureModel
 from .forms import BoardFormModel
 from django.contrib.auth.models import User
@@ -27,8 +27,11 @@ def mnvoice_base(request, lecture_name):
     lecture_model = LectureModel.objects.get(name=lecture_name) 
 
     models = BoardModel.objects.filter(lecture=lecture_model)
+
+    syllabus_model = SyllabusModel.objects.get(lecture=lecture_model)
     
     return render(request, 'mnvoice/mnvoice.html', 
                   context={'lecture_name':lecture_name, 
                            'models':models,
+                           'syllabus_model' : syllabus_model,
                            'forms':forms})
