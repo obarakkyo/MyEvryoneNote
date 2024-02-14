@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def mnvoice_base(request, lecture_name):
-    print('lecture_name=', lecture_name, type(lecture_name))
+    # print('lecture_name=', lecture_name, type(lecture_name))
 
     #formを取得する
     forms = BoardFormModel()

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>登録講義リスト</title>
+        <link rel="stylesheet" href="{% static "css/lecture_lists.css" %}">
+        <script src="{% static "js/jquery.min.js" %}"></script>
+    </head>
+    <body>
+            <div class="title-left">
+                <img src="{% static "image/logoleft.png"%}"  id="logoleft">
+            </div>
+
+            <div class="title-right">
+                <img src="{% static  "image/logoright.png"%}" id="logoright">
+            </div>
+
+        <div class="contents">
+            {% if models%}
+                <table class="lecture-table">
+                    <thead>
+                        <tr>
+                            <th>講義名</th>
+                            <th>教授名</th>
+                            <th>時間</th>
+                            <th>概要</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for model in models%}
+                        <tr>
+                            <td>{{model.lecture}}</td>
+                            <td>{{model.professor}}</td>
+                            <td>{{model.Opening_hours}}</td>
+                            <td class="overview">{{model.overview}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+        <script>
+        $(document).ready(function(){
+            console.log('Ready!!');
+
+            $(".title-right").click(function(){
+                console.log('back!');
+                window.location.href = "{% url 'userlogapp:search'%}";
+            })
+
+            $(".title-left").click(function(){
+                console.log('back!');
+                window.location.href = "{% url 'userlogapp:search'%}";
+            })
+        })
+            
+        </script>
+    </body>
+</html>

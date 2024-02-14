@@ -4,6 +4,7 @@ from django.db import IntegrityError
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.contrib import messages
+from mnvoice.models import SyllabusModel
 
 # Create your views here.
 def userlogapp_base(request):
@@ -49,3 +50,9 @@ def logoutfunc(request):
 
 def base_func(request):
     return render(request, 'base.html', context={})
+
+
+"""講義リストを表示するページ"""
+def lecture_lists_func(request):
+    models = SyllabusModel.objects.all()
+    return render(request, 'userlogapp/lecture_lists.html', context={'models':models})
