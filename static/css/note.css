@@ -154,9 +154,9 @@ img{
 }
 .lecture_lists{
     position: absolute;
-    width: 37%;
+    width: 40%;
     height: 100%;
-    left: 5%;
+    left: 3%;
     /* background-color: aqua; */
 }
 
@@ -180,6 +180,11 @@ img{
     border-left: transparent;
     border-right: transparent;
 
+}
+
+.lecture_a{
+    position: absolute;
+    width: 75%;
 }
 
 .upload_icon{
